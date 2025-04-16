@@ -1,15 +1,15 @@
-# AI问数FastAPI服务工程
+# RAGFLOW-FastAPI服务
 
 ## 项目结构
 ```tree
-FastAPIProject/
+ragflow-fastapi/
 ├── app.py               # 服务入口文件
 ├── config.py            # 应用配置（日志/API密钥等）
 ├── schemas.py           # 数据模型定义
 ├── services/            # 业务逻辑实现
-│   └── ragflow_service.py 
+│   └── ragflowService.py 
 ├── routers/             # API路由模块
-│   ├── sql.py          # SQL查询路由
+│   ├── agent.py         # Agent查询路由
 │   └── health.py       # 健康检查路由
 └── README.md            # 项目文档
 ```
@@ -126,7 +126,7 @@ python app.py
 pip freeze > requirements.txt
 
 # 测试接口（Windows PowerShell）
-curl.exe -Method POST -Uri "http://localhost:5002/api/sql_query" `
+curl.exe -Method POST -Uri "http://localhost:5002/api/agentQuery" `
 -Body '{"""question""":"""查询销售数据""", """agent_id""":"""YOUR_AGENT_ID"""}' `
 -ContentType "application/json"
 

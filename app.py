@@ -4,8 +4,8 @@ import uvicorn
 
 # 初始化核心应用
 app = FastAPI(
-    title="RagFlow SQL查询代理",
-    description="简化版SQL查询代理服务",
+    title="RagFlow FASTAPI代理",
+    description="RagFlow FASTAPI代理服务",
     version="1.0.0",
 )
 
@@ -19,8 +19,8 @@ app.add_middleware(
 )
 
 # 挂载路由模块
-from routers import sql, health
-app.include_router(sql.router, prefix="/api")
+from routers import agent, health
+app.include_router(agent.router, prefix="/api")
 app.include_router(health.router)
 
 # 启动服务

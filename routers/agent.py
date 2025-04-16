@@ -1,11 +1,11 @@
 from fastapi import APIRouter, HTTPException
 from schemas import SQLQueryRequest, SQLQueryResponse
-from services.ragflow_service import create_session, query_ragflow
+from services.ragflowService import create_session, query_ragflow
 
 router = APIRouter()
 
-@router.post("/sql_query", response_model=SQLQueryResponse)
-async def sql_query(request: SQLQueryRequest):
+@router.post("/agent", response_model=SQLQueryResponse)
+async def completions(request: SQLQueryRequest):
 
     """将自然语言转换为SQL的API端点"""
     question = request.question

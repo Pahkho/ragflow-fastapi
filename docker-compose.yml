@@ -4,7 +4,7 @@ services:
   ragflow-fastapi:
     build: .
     image: ragflow-fastapi:latest  # 指定新的镜像名字和标签
-    container_name: ragflow-fastapi
+    container_name: ragflow-fastapi # 指定容器名字
     ports:
       - "9002:8000"
     volumes:
