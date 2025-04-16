@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ragflow-fastapi:
+    build: .
+    image: ragflow-fastapi:latest  # 指定新的镜像名字和标签
+    container_name: ragflow-fastapi
+    ports:
+      - "9002:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

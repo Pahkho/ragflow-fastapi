@@ -1,0 +1,27 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:5002/health
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:5001/hello/User
+Accept: application/json
+
+###
+
+GET http://111.231.77.76:5002/
+Accept: application/json
+
+
+
+###
+POST  http://192.168.1.5:5002/api/sql_query
+Content-Type:application/json
+
+{
+  "question": "请查询所有品牌信息",
+  "agent_id": "25bbd732115811f0bad80242ac130002"
+}
+
+    
